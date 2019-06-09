@@ -1,4 +1,3 @@
-const express = require('express');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -8,8 +7,7 @@ const history = require('connect-history-api-fallback');
 
 const authRoutes = require('./auth/routes');
 
-module.exports = (db, passport) => {
-    const app = express();
+module.exports = async (express, app, db, rabbit, io, passport) => { // eslint-disable-line
     app.use(helmet());
 
     app.enable('trust proxy');
@@ -30,9 +28,9 @@ module.exports = (db, passport) => {
     //     session: false
     // });
 
-    // routes
     authRoutes(app, passport);
-    // routes(app, db, auth);
+
+    // routes(app, auth, db);
 
     app.use(history());
 
