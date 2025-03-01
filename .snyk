@@ -1,0 +1,22 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:debug:20170905':
+    - vue-websocket > socket.io-client > debug:
+        patched: '2019-10-30T20:12:20.545Z'
+    - vue-websocket > socket.io-client > engine.io-client > debug:
+        patched: '2019-10-30T20:12:20.545Z'
+    - vue-websocket > socket.io-client > socket.io-parser > debug:
+        patched: '2019-10-30T20:12:20.545Z'
+  'npm:ms:20170412':
+    - vue-websocket > socket.io-client > debug > ms:
+        patched: '2019-10-30T20:12:20.545Z'
+    - vue-websocket > socket.io-client > engine.io-client > debug > ms:
+        patched: '2019-10-30T20:12:20.545Z'
+    - vue-websocket > socket.io-client > socket.io-parser > debug > ms:
+        patched: '2019-10-30T20:12:20.545Z'
+  'npm:ws:20160920':
+    - vue-websocket > socket.io-client > engine.io-client > ws:
+        patched: '2019-10-30T20:12:20.545Z'
